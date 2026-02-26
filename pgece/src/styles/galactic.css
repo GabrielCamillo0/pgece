@@ -1,0 +1,55 @@
+.galactic-bg {
+  background:
+    radial-gradient(800px 400px at 15% 20%, rgba(236, 82, 37, .20), transparent 60%),
+    radial-gradient(700px 500px at 80% 10%, rgba(88, 29, 81, .28), transparent 55%),
+    radial-gradient(900px 600px at 60% 85%, rgba(33, 10, 83, .35), transparent 55%),
+    linear-gradient(180deg, #14050b 0%, #0c0410 100%);
+}
+
+.galactic-noise::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  pointer-events:none;
+}
+
+.scene-3d {
+  perspective: 1200px;
+}
+
+.plane-3d {
+  transform: rotateX(10deg) rotateY(-12deg);
+  transform-style: preserve-3d;
+}
+
+.portfolio-card {
+  position: relative;
+  border-radius: 22px;
+  background: rgba(20, 5, 11, 0.55);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.55),
+    0 0 40px rgba(88,29,81,.22),
+    0 0 35px rgba(236,82,37,.12);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.portfolio-card::after{
+  content:"";
+  position:absolute; inset:-1px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(236,82,37,.35), rgba(88,29,81,.35), rgba(33,10,83,.35));
+  opacity: .35;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.portfolio-card:hover{
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 28px 80px rgba(0,0,0,.60),
+    0 0 50px rgba(88,29,81,.28),
+    0 0 45px rgba(236,82,37,.18);
+}
