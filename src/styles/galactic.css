@@ -1,19 +1,165 @@
-/* ─── Global vignette (darker edges everywhere) ───────────────────── */
-body::after {
+/* ─── Intro: cortina some instantaneamente (sem fade) ───────────────── */
+@keyframes intro-overlay-fade-out {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.intro-overlay {
+  background-color: #f8f7fc;
+  animation: intro-overlay-fade-out 0s ease-out 0s forwards;
+}
+.dark .intro-overlay {
+  background-color: #08000e;
+}
+
+/* Conteúdo visível desde o início (sem fade-in) */
+.intro-content {
+  opacity: 1;
+}
+
+/* ─── Fundo global contínuo + vignette (uma única camada para todo o site) ── */
+.global-bg-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+/* Base: light mode — gradiente claro sutil */
+.global-bg-wrapper::before {
   content: "";
   position: fixed;
   inset: 0;
+  z-index: -2;
   pointer-events: none;
-  z-index: 999;
+  background: linear-gradient(
+    180deg,
+    #f8f7fc 0%,
+    #f0eef8 35%,
+    #e8e5f2 65%,
+    #f2f0f8 100%
+  );
+}
+/* Base: dark mode — gradiente escuro */
+.dark .global-bg-wrapper::before {
+  background: linear-gradient(
+    180deg,
+    #0a0012 0%,
+    #08000e 35%,
+    #05000a 65%,
+    #06000c 100%
+  );
+}
+/* Vignette: light mode — moldura leve */
+.global-bg-wrapper::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background: radial-gradient(
     ellipse 120% 100% at 50% 50%,
-    transparent 40%,
-    rgba(0, 0, 0, 0.45) 75%,
-    rgba(0, 0, 0, 0.85) 100%
+    transparent 50%,
+    rgba(0, 0, 0, 0.06) 80%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
+}
+/* Vignette: dark mode — moldura escura nas bordas */
+.dark .global-bg-wrapper::after {
+  background: radial-gradient(
+    ellipse 120% 100% at 50% 50%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.25) 65%,
+    rgba(0, 0, 0, 0.55) 85%,
+    rgba(0, 0, 0, 0.75) 100%
   );
 }
 
-/* ─── Smooth section-to-section gradient bridge ────────────────────── */
+/* ─── Variação leve de contraste por seção (sem separador) ───────────────── */
+.section-tone {
+  position: relative;
+}
+.section-tone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 0;
+}
+.section-tone--light::before {
+  background: rgba(255, 255, 255, 0.01);
+}
+.section-tone--dark::before {
+  background: rgba(0, 0, 0, 0.06);
+}
+.section-tone > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Fundo cósmico (legado; páginas Next usam global-bg-wrapper) ─────────── */
+.cosmic-sections-bg {
+  position: relative;
+}
+/* Camada 1 (baixo): gradiente mais transparente para a imagem aparecer mais */
+.cosmic-sections-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 0, 14, 0.62) 0%,
+    rgba(5, 0, 10, 0.55) 45%,
+    rgba(8, 0, 14, 0.68) 100%
+  );
+}
+/* Camada 2 (cima): imagem mais visível */
+.cosmic-sections-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: url("/cosmic-bg.png") center center / cover no-repeat;
+  opacity: 0.7;
+  pointer-events: none;
+}
+/* Conteúdo acima das camadas de fundo */
+.cosmic-sections-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Camada de fundo cósmico como div real (home): garante que a imagem apareça ── */
+.cosmic-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  min-height: 100%;
+}
+.cosmic-bg-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 0, 14, 0.62) 0%,
+    rgba(5, 0, 10, 0.55) 45%,
+    rgba(8, 0, 14, 0.68) 100%
+  );
+}
+.cosmic-bg-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: url("/cosmic-bg.png") center center / cover no-repeat;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* ─── Smooth section-to-section gradient bridge (semi-transparente para ver o cósmico) ────────────────────── */
 .section-bridge {
   position: relative;
   z-index: 5;
@@ -21,10 +167,10 @@ body::after {
   margin-top: -1px;
   background: linear-gradient(
     to bottom,
-    #08000e 0%,
-    #0a0018 30%,
-    #0d0020 60%,
-    #0a000d 100%
+    transparent 0%,
+    rgba(8, 0, 14, 0.2) 40%,
+    rgba(10, 0, 24, 0.35) 70%,
+    rgba(10, 0, 13, 0.45) 100%
   );
 }
 
@@ -48,6 +194,15 @@ body::after {
     radial-gradient(700px 600px at 85% 5%,   rgba(139, 31, 204, 0.22), transparent 55%),
     radial-gradient(900px 700px at 55% 90%,  rgba(107, 15, 160, 0.18), transparent 60%),
     linear-gradient(180deg, #0d0020 0%, #08000e 50%, #050008 100%);
+}
+
+/* ─── Mesmo estilo sobre o fundo cósmico (seção portfólio) ──────────── */
+.galactic-bg-over-cosmic {
+  background:
+    radial-gradient(800px 500px at 10% 15%,  rgba(255, 72,  32, 0.1), transparent 60%),
+    radial-gradient(700px 600px at 85% 5%,   rgba(139, 31, 204, 0.15), transparent 55%),
+    radial-gradient(900px 700px at 55% 90%,  rgba(107, 15, 160, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(13,0,32,0.5) 0%, rgba(8,0,14,0.48) 50%, rgba(5,0,8,0.55) 100%);
 }
 
 /* ─── Noise overlay ────────────────────────────────────────────────── */
@@ -141,4 +296,55 @@ body::after {
   border-radius: 50%;
   position: absolute;
   transform-style: preserve-3d;
+}
+
+/* ─── Section divider (linha de transição entre seções) ─────────────── */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 72, 32, 0.15) 20%,
+    rgba(255, 72, 32, 0.25) 50%,
+    rgba(255, 72, 32, 0.15) 80%,
+    transparent 100%
+  );
+  margin: 0;
+}
+
+/* ─── Section top glow (highlight sutil no topo da seção) ────────────── */
+.section-top-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.06) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* ─── Card hover (elevação + borda + glow sutil) ────────────────────── */
+.section-card-hover {
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+}
+.section-card-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.5),
+    0 0 48px rgba(139, 31, 204, 0.08),
+    0 0 32px rgba(255, 72, 32, 0.06);
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-card-hover:hover {
+    transform: none;
+  }
 }

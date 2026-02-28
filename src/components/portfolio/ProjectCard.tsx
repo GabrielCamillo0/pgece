@@ -1,6 +1,23 @@
+"use client";
+
+import type { ReactNode } from "react";
+import dynamic from "next/dynamic";
 import type { Project } from "@/data/projects";
-import Tilt from "react-parallax-tilt";
 import { ProjectModal } from "./ProjectModal";
+
+function TiltFallback(props: { children?: ReactNode; className?: string; style?: React.CSSProperties }) {
+  const { children, className, style } = props;
+  return <div className={className} style={style}>{children}</div>;
+}
+
+const Tilt = dynamic(
+  () =>
+    import("react-parallax-tilt").then((m) => {
+      const C = m?.default;
+      return C ?? TiltFallback;
+    }),
+  { ssr: false }
+);
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 

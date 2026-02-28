@@ -1,6 +1,11 @@
+"use client";
+
+import Link from "next/link";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "./ProjectCard";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const CARD_WIDTH = 520;
 const GAP = 28;
@@ -14,83 +19,44 @@ function getTrackWidth(n: number) {
   return n * CARD_WIDTH + (n - 1) * GAP;
 }
 
-export function GalacticPortfolioSection() {
+type GalacticPortfolioSectionProps = { showViewMore?: boolean };
+
+export function GalacticPortfolioSection({ showViewMore = true }: GalacticPortfolioSectionProps) {
+  const { t } = useTranslation();
+
   return (
-    <section
-      id="cases"
-      className="relative overflow-hidden galactic-bg min-h-screen"
-      style={{
-        /* Smooth gradient bridge from hero's dark bottom */
-        paddingTop: "0",
-      }}
-    >
-      {/* ── Top gradient bridge from hero ── */}
-      <div
-        aria-hidden
-        className="absolute top-0 left-0 right-0 h-40 pointer-events-none z-10"
-        style={{
-          background:
-            "linear-gradient(to bottom, #05000a 0%, rgba(5,0,12,0.6) 40%, transparent 100%)",
-        }}
-      />
-
-      {/* Noise */}
-      <div className="absolute inset-0 galactic-noise" aria-hidden />
-
-      {/* Galaxy video */}
-      <video
-        className="absolute inset-0 z-20 h-full w-full object-cover opacity-25 mix-blend-screen pointer-events-none"
-        autoPlay muted loop playsInline aria-hidden
-      >
-        <source src="/galaxy.webm" type="video/webm" />
-        <source src="/galaxy.mp4" type="video/mp4" />
-      </video>
-
-      {/* Glow accents */}
-      <div aria-hidden className="absolute top-32 right-16 h-[380px] w-[380px] rounded-full bg-brand-purple/10 blur-[110px] pointer-events-none z-10 animate-glow-pulse" />
-      <div aria-hidden className="absolute bottom-24 left-16 h-[280px] w-[280px] rounded-full bg-brand-red/8 blur-[90px] pointer-events-none z-10 animate-glow-pulse" style={{ animationDelay: "2s" }} />
-
-      <div className="relative z-30 mx-auto max-w-6xl px-6 py-28">
-
+    <div className="relative overflow-hidden">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-6 py-8 md:py-12">
         {/* ── Section header ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-16"
-        >
+        <div className="mb-16">
           {/* Label row */}
-          <div className="flex items-center gap-3 mb-5">
+          <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-10 bg-gradient-to-r from-brand-red to-brand-orange" />
-            <span className="text-xs tracking-[0.28em] uppercase text-brand-red font-medium font-mono">
-              Nosso trabalho
+            <span className="text-sm tracking-[0.28em] uppercase text-brand-red font-medium font-mono">
+              {t("portfolioSection.label")}
             </span>
           </div>
 
           {/* Title */}
-          <h2 className="text-[42px] md:text-[58px] font-semibold tracking-[-0.02em] text-white leading-[1.05]">
-            Portfolio{" "}
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.02em] text-white leading-[1.05]">
+            {t("portfolioSection.titlePrefix")}{" "}
             <span className="bg-gradient-to-r from-brand-red/70 via-brand-orange/60 to-transparent bg-clip-text text-transparent">
-              selecionado
+              {t("portfolioSection.titleAccent")}
             </span>
           </h2>
 
-          {/* Subtitle + CTA row */}
-          <div className="mt-4">
-            <p className="text-[15px] text-white/50 max-w-sm leading-relaxed">
-              Projetos que combinam estética e performance para gerar
-              resultados reais.
-            </p>
-          </div>
+          {/* Subtitle */}
+          <p className="mt-6 text-base text-white/50 max-w-sm leading-relaxed">
+            {t("portfolioSection.subtitle")}
+          </p>
 
           {/* Decorative divider */}
-          <div className="mt-8 h-px bg-gradient-to-r from-brand-red/30 via-white/8 to-transparent" />
-        </motion.div>
+          <div className="mt-10 h-px bg-gradient-to-r from-brand-red/30 via-white/8 to-transparent" />
+        </div>
       </div>
 
-      {/* ── Duas filas de cards: movimento ocupa a tela inteira (entram e saem pelas bordas) ── */}
-      <div className="relative z-30 w-full overflow-hidden">
+      {/* ── Duas filas de cards (marquee) ── */}
+      <div className="relative z-10 w-full overflow-hidden">
           {/* Fila 1: cards entrando pela direita e saindo pela esquerda */}
           <div className="overflow-hidden py-3" aria-hidden>
             <motion.div
@@ -164,6 +130,14 @@ export function GalacticPortfolioSection() {
             aria-hidden
           />
       </div>
-    </section>
+
+      {showViewMore && (
+        <div className="relative z-10 flex justify-center pt-12 pb-8 md:pt-14 md:pb-10">
+          <Button asChild variant="outline" size="default" className="w-fit">
+            <Link href="/portifolio">{t("portfolioSection.cta")}</Link>
+          </Button>
+        </div>
+      )}
+    </div>
   );
 }

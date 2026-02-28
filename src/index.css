@@ -4,30 +4,62 @@
 
 @layer base {
   :root {
-    /* Opium dark theme — HSL values */
-    --background:  257 93% 4%;
-    --foreground:  0 0% 100%;
+    /* Light theme (shadcn default) */
+    --background: 0 0% 100%;
+    --foreground: 257 30% 14%;
 
-    --card:        257 80% 7%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 98%;
+    --card-foreground: 257 30% 14%;
 
-    --primary:     15 100% 57%;    /* #FF4820 red-orange */
+    --primary: 15 100% 57%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary:   270 85% 15%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 257 20% 94%;
+    --secondary-foreground: 257 30% 14%;
 
-    --muted:       257 50% 12%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 257 15% 92%;
+    --muted-foreground: 257 15% 40%;
 
-    --accent:      15 100% 57%;
+    --accent: 15 100% 57%;
     --accent-foreground: 0 0% 100%;
 
-    --border:      257 30% 18%;
-    --input:       257 30% 18%;
-    --ring:        15 100% 57%;
+    --border: 257 15% 88%;
+    --input: 257 15% 88%;
+    --ring: 15 100% 57%;
 
     --radius: 0.75rem;
+    /* Layout tokens */
+    --container-max: 72rem;
+    --section-padding-y: 5rem;
+    --section-padding-y-md: 6rem;
+    --section-padding-y-lg: 8rem;
+    --content-gap: 1.5rem;
+    --content-gap-md: 2rem;
+  }
+
+  .dark {
+    /* Opium dark theme — HSL values */
+    --background: 257 93% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 257 80% 7%;
+    --card-foreground: 0 0% 100%;
+
+    --primary: 15 100% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 85% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 257 50% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 15 100% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --border: 257 30% 18%;
+    --input: 257 30% 18%;
+    --ring: 15 100% 57%;
   }
 
   * {
@@ -37,12 +69,20 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 18px;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      font-size: 19px;
+    }
   }
 
   body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
+    overflow-x: hidden;
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
@@ -55,5 +95,35 @@
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  /* ─── Barra de scroll customizada ─────────────────────────────────── */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(15 100% 57% / 0.5) hsl(257 30% 18%);
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: hsl(257 50% 8%);
+    border-radius: 10px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(15 100% 57% / 0.6), hsl(15 100% 45% / 0.5));
+    border-radius: 10px;
+    border: 2px solid hsl(257 50% 8%);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(15 100% 57% / 0.8), hsl(15 100% 45% / 0.7));
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: hsl(257 50% 8%);
   }
 }

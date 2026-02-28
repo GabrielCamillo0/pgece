@@ -1,3 +1,5 @@
+"use client";
+
 import type { Project } from "@/data/projects";
 import { type ReactNode, useState } from "react";
 import {

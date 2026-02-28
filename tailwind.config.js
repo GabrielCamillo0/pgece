@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
+  content: [
+    "./index.html",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -43,10 +48,19 @@ export default {
         sans: ["Space Grotesk", "system-ui", "sans-serif"],
         mono: ["Space Mono", "monospace"],
       },
+      maxWidth: {
+        container: "var(--container-max)",
+      },
+      spacing: {
+        section: "var(--section-padding-y)",
+        "section-md": "var(--section-padding-y-md)",
+        "section-lg": "var(--section-padding-y-lg)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        card: "22px",
       },
       keyframes: {
         "accordion-down": {
