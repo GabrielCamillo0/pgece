@@ -4,62 +4,37 @@
 
 @layer base {
   :root {
-    /* Light theme (shadcn default) */
-    --background: 0 0% 100%;
-    --foreground: 257 30% 14%;
+    /* Opium dark theme — HSL values */
+    --background:  257 93% 4%;
+    --foreground:  0 0% 100%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 257 30% 14%;
+    --card:        257 80% 7%;
+    --card-foreground: 0 0% 100%;
 
-    --primary: 15 100% 57%;
+    --primary:     15 100% 57%;    /* #FF4820 red-orange */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 257 20% 94%;
-    --secondary-foreground: 257 30% 14%;
+    --secondary:   270 85% 15%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 257 15% 92%;
-    --muted-foreground: 257 15% 40%;
+    --muted:       257 50% 12%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 15 100% 57%;
+    --accent:      15 100% 57%;
     --accent-foreground: 0 0% 100%;
 
-    --border: 257 15% 88%;
-    --input: 257 15% 88%;
-    --ring: 15 100% 57%;
+    --border:      257 30% 18%;
+    --input:       257 30% 18%;
+    --ring:        15 100% 57%;
 
     --radius: 0.75rem;
     /* Layout tokens */
     --container-max: 72rem;
-    --section-padding-y: 5rem;
-    --section-padding-y-md: 6rem;
-    --section-padding-y-lg: 8rem;
-    --content-gap: 1.5rem;
-    --content-gap-md: 2rem;
-  }
-
-  .dark {
-    /* Opium dark theme — HSL values */
-    --background: 257 93% 4%;
-    --foreground: 0 0% 100%;
-
-    --card: 257 80% 7%;
-    --card-foreground: 0 0% 100%;
-
-    --primary: 15 100% 57%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 270 85% 15%;
-    --secondary-foreground: 0 0% 95%;
-
-    --muted: 257 50% 12%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 15 100% 57%;
-    --accent-foreground: 0 0% 100%;
-
-    --border: 257 30% 18%;
-    --input: 257 30% 18%;
-    --ring: 15 100% 57%;
+    --section-padding-y: 5rem;     /* py-20 */
+    --section-padding-y-md: 6rem;  /* md:py-24 */
+    --section-padding-y-lg: 8rem; /* py-32 for hero sections */
+    --content-gap: 1.5rem;         /* gap-6 */
+    --content-gap-md: 2rem;        /* md:gap-8 */
   }
 
   * {

@@ -7,11 +7,7 @@
 }
 
 .intro-overlay {
-  background-color: #f8f7fc;
   animation: intro-overlay-fade-out 0s ease-out 0s forwards;
-}
-.dark .intro-overlay {
-  background-color: #08000e;
 }
 
 /* Conteúdo visível desde o início (sem fade-in) */
@@ -24,7 +20,7 @@
   position: relative;
   min-height: 100vh;
 }
-/* Base: light mode — gradiente claro sutil */
+/* Base: gradiente escuro sutil (sem faixas) */
 .global-bg-wrapper::before {
   content: "";
   position: fixed;
@@ -33,38 +29,19 @@
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    #f8f7fc 0%,
-    #f0eef8 35%,
-    #e8e5f2 65%,
-    #f2f0f8 100%
-  );
-}
-/* Base: dark mode — gradiente escuro */
-.dark .global-bg-wrapper::before {
-  background: linear-gradient(
-    180deg,
     #0a0012 0%,
     #08000e 35%,
     #05000a 65%,
     #06000c 100%
   );
 }
-/* Vignette: light mode — moldura leve */
+/* Vignette: moldura escura nas bordas/cantos */
 .global-bg-wrapper::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 120% 100% at 50% 50%,
-    transparent 50%,
-    rgba(0, 0, 0, 0.06) 80%,
-    rgba(0, 0, 0, 0.12) 100%
-  );
-}
-/* Vignette: dark mode — moldura escura nas bordas */
-.dark .global-bg-wrapper::after {
   background: radial-gradient(
     ellipse 120% 100% at 50% 50%,
     transparent 35%,

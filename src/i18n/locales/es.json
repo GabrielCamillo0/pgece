@@ -1,0 +1,333 @@
+{
+  "language": {
+    "en": "EN",
+    "pt": "PT",
+    "es": "ES"
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "goHomeAria": "Ir al inicio",
+    "languageAria": "Idioma"
+  },
+  "hero": {
+    "badge": "Descubre el poder de un diseño bien construido",
+    "headline": {
+      "line1": "Experiencia digital que",
+      "accent": "Transforma",
+      "line3": "tu negocio."
+    },
+    "subtext": "Tu éxito digital empieza con una interfaz bien diseñada.\n¡Construyamos algo increíble juntos!",
+    "stats": {
+      "projects": "Proyectos entregados",
+      "clients": "Clientes satisfechos",
+      "commitment": "Compromiso"
+    },
+    "scrollAria": "Desplazar hacia abajo",
+    "scrollLabel": "Scroll"
+  },
+  "portfolioSection": {
+    "label": "Nuestro trabajo",
+    "titlePrefix": "Portafolio",
+    "titleAccent": "seleccionado",
+    "subtitle": "Proyectos que combinan estética y rendimiento para generar resultados reales.",
+    "cta": "Ver más"
+  },
+  "project": {
+    "seeDetails": "Ver detalles",
+    "modalLabel": "Proyecto",
+    "visitSite": "Visitar sitio",
+    "opensNewTab": "Se abre en una nueva pestaña"
+  },
+  "servicesSection": {
+    "label": "SERVICIOS",
+    "title": "Del briefing al deploy,",
+    "titleAccent": "enfocado en conversión y escala.",
+    "description": "Cada proyecto se diseña para tu contexto de negocio.",
+    "more": "¿Necesitas algo más específico o un volumen recurrente de proyectos?",
+    "moreAccent": "Mira todos los servicios y el formato para agencias.",
+    "ctaServices": "Ver página de servicios",
+    "ctaContact": "Hablar sobre un proyecto"
+  },
+  "processSection": {
+    "label": "PROCESO",
+    "title": "Un flujo ágil, predecible y listo para ",
+    "titleAccent": "agencia.",
+    "description": "Alcance claro, checkpoints objetivos y handoff completo. Sabes exactamente qué ocurre en cada etapa — del briefing al deploy — sin retrabajo ni sorpresas.",
+    "chips": ["Alcance cerrado", "Checkpoints", "Staging", "Handoff completo"],
+    "steps": [
+      {
+        "title": "01 — Contexto y briefing",
+        "text": "Entiendo tu negocio, público, oferta y objetivo del proyecto. Alineo referencias y restricciones (plazo, contenido, integraciones) para empezar con dirección clara.",
+        "youReceive": "Recibes: checklist de requisitos + mapa inicial de entregables."
+      },
+      {
+        "title": "02 — Alineación de alcance",
+        "text": "Definimos qué entra en V1 (prioridades) y qué queda para evolución. Así evitamos alcance infinito y garantizamos entrega rápida con calidad.",
+        "youReceive": "Recibes: alcance cerrado + lista de páginas/secciones + criterios de 'listo'."
+      },
+      {
+        "title": "03 — Estructura y prototipo",
+        "text": "Organizo la arquitectura de páginas, navegación y jerarquía de contenido pensando en conversión y experiencia (mobile-first).",
+        "youReceive": "Recibes: wireframe/prototipo ligero + guion de secciones y CTAs."
+      },
+      {
+        "title": "04 — Implementación",
+        "text": "Construcción del layout con componentes reutilizables, responsive y listo para crecer. Integraciones esenciales aquí (formularios, WhatsApp, tracking, reservas, etc.).",
+        "youReceive": "Recibes: versión navegable + preview/staging para validación rápida."
+      },
+      {
+        "title": "05 — Revisiones guiadas",
+        "text": "Rondas de ajustes centradas en lo que importa: claridad, consistencia visual, rendimiento y conversión. Sin idas y vueltas infinitas.",
+        "youReceive": "Recibes: ajustes priorizados + checklist de calidad (UX/SEO/rendimiento)."
+      },
+      {
+        "title": "06 — Entrega y handoff",
+        "text": "Entrega organizada para que agencia/equipo siga sin depender de ti. Código, deploy, variables, documentación y guía de mantenimiento.",
+        "youReceive": "Recibes: repo/documentación + checklist de deploy + próximos pasos sugeridos."
+      }
+    ],
+    "guaranteesLabel": "Garantías del proceso",
+    "guarantees": [
+      "Sin retrabajo: alcance y criterios de listo definidos",
+      "Transparente: staging + checkpoints",
+      "Reutilizable: handoff pensado para agencia"
+    ]
+  },
+  "aboutSection": {
+    "label": "SOBRE",
+    "title": "De la idea al producto en vivo — sitios, sistemas y automatizaciones con estándar profesional.",
+    "paragraph1": "Soy desarrollador enfocado en crear experiencias digitales claras, rápidas y fáciles de mantener — desde landing pages y sitios institucionales hasta software interno, automatizaciones y SaaS. Mi objetivo es convertir la necesidad de negocio en solución lista para usar, con orden y calidad de entrega.",
+    "paragraph2": "Trabajo tanto con agencias (white-label y soporte técnico) como con negocios que quieren vender más y operar mejor. Para agencias, entrego velocidad, consistencia y handoff limpio. Para negocios, entrego presencia digital, integraciones y automatizaciones que reducen trabajo manual y aumentan resultado.",
+    "highlight": "Alcance claro. Comunicación rápida. Entrega predecible. Evolución continua.",
+    "chips": ["Sitios y Landing Pages", "Automatizaciones", "Software interno", "SaaS / MVP", "Deploy + Handoff"],
+    "oQueVoceGanhaLabel": "Qué obtienes",
+    "oQueVoceGanha": [
+      "Velocidad con calidad: entregas por etapas y checkpoints",
+      "Listo para producción: rendimiento, SEO base y tracking cuando haga falta",
+      "Continuidad: documentación y estructura para evolucionar sin dolor"
+    ],
+    "ctaPrimary": "Ver portafolio",
+    "ctaSecondary": "Hablar conmigo"
+  },
+  "contactSection": {
+    "label": "CONTACTO",
+    "title": "Pongamos tu proyecto en marcha con claridad y rapidez.",
+    "description": "Envíame el tipo de proyecto, plazo y 2–3 referencias (o un sitio que te guste). Respondo con una propuesta: alcance de V1, plazo estimado y próximos pasos.",
+    "otherWaysTitle": "Otras formas de contacto",
+    "channels": [
+      { "label": "WhatsApp", "href": "https://wa.me/TU_NUMERO", "description": "Respuesta en hasta 24h hábiles." },
+      { "label": "Email", "href": "mailto:tuemail@dominio.com", "description": "Respuesta rápida." },
+      { "label": "Agendar llamada", "href": "https://calendly.com/TU_LINK", "description": "Respuesta rápida." },
+      { "label": "LinkedIn", "href": "https://linkedin.com/in/TU_PERFIL", "description": "Respuesta rápida." }
+    ],
+    "afterTitle": "Qué pasa después",
+    "oQueAconteceDepois": [
+      "Leo tu mensaje y confirmo detalles",
+      "Te envío la V1 (alcance + plazo)",
+      "Empezamos con checklist y primera entrega"
+    ]
+  },
+  "contactForm": {
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Tipo de proyecto (sitio/landing/sistema/SaaS), plazo, referencias y objetivo principal (ej.: leads, reservas, ventas, automatización).",
+    "messageHint": "Puedes pegar enlaces aquí.",
+    "success": "Se abrió tu cliente de email. Envía el mensaje para ponerte en contacto.",
+    "submit": "Enviar mensaje",
+    "moreContacts": "Más formas de contacto",
+    "hintSuggestion": "Sugerencia: envía 2–3 referencias y el plazo deseado.",
+    "hintWhatsApp": "Si prefieres, usa WhatsApp para respuesta más rápida.",
+    "subject": "Contacto desde el sitio — {{name}}",
+    "body": "Nombre: {{name}}\nEmail: {{email}}\n\nMensaje:\n{{message}}",
+    "validationNameMin": "Usa al menos 2 caracteres.",
+    "validationEmailInvalid": "Indica un email válido.",
+    "validationMessageMin": "Escribe al menos 20 caracteres para entender tu proyecto."
+  },
+  "contactPage": {
+    "label": "Contacto",
+    "title": "Envía tu mensaje",
+    "subtitle": "Completa el formulario a continuación.",
+    "socialTitle": "Redes"
+  },
+  "footer": {
+    "description": "Experiencias digitales que transforman. Desarrollo enfocado en agencias y negocios digitales que necesitan una entrega clara y un handoff organizado.",
+    "navigation": "Navegación",
+    "contact": "Contacto",
+    "whatsapp": "WhatsApp"
+  },
+  "stackSection": {
+    "label": "STACK",
+    "title": "Stack ligero, lista para producción y fácil de mantener.",
+    "description": "Elijo la stack ideal para tu caso (sitio rápido, sistema interno o SaaS) con foco en rendimiento, SEO, integración y handoff.",
+    "cards": {
+      "frontend": "Frontend",
+      "backend": "Backend e integraciones",
+      "deploy": "Deploy",
+      "quality": "Calidad"
+    },
+    "items": {
+      "frontend": ["React", "Next.js (cuando aplica)", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
+      "backend": ["APIs REST", "Node.js", "Webhooks", "Prisma (opcional)", "PostgreSQL (opcional)", "Stripe / Pagos (cuando necesario)", "Resend / Email (cuando necesario)"],
+      "deploy": ["Vercel", "Netlify", "Cloudflare Pages", "Cloudflare DNS", "GitHub Actions (opcional)"],
+      "quality": ["Mobile-first", "Accesibilidad básica", "SEO on-page", "Core Web Vitals", "Rendimiento inicial", "Handoff / Docs"]
+    }
+  },
+  "agenciesSection": {
+    "label": "PARA AGENCIAS",
+    "title": "White-label para que tú vendas, ",
+    "titleAccent": "yo entrego con estándar y previsibilidad.",
+    "description": "Tú mantienes la estrategia y la relación con el cliente. Yo me encargo de la implementación, rendimiento e integraciones — con checkpoints claros y handoff listo para que tu equipo siga sin dolor.",
+    "cards": {
+      "card1Title": "Operación white-label",
+      "card1Desc": "Entro como extensión de tu equipo — tú firmas, yo entrego.",
+      "card1Bullets": ["Comunicación rápida (Slack/WhatsApp/Email)", "Entrega por etapas con checkpoints (sin sorpresas)", "Estándares alineados con la stack y guía de la agencia", "Pull Requests limpios y cambios fáciles de revisar"],
+      "card2Title": "Handoff organizado",
+      "card2Desc": "Entrega lista para mantenimiento y evolución.",
+      "card2Bullets": ["Repositorio (GitHub o similar) bien estructurado", "Deploy configurado (Vercel/Netlify/Cloudflare, según proyecto)", "README + setup + env example + notas importantes", "Checklist final (SEO base, rendimiento, tracking cuando haga falta)"],
+      "card3Title": "Modelos de trabajo",
+      "card3Desc": "Flexible a tu flujo de producción.",
+      "card3Bullets": ["Por proyecto cerrado (alcance y plazo definidos)", "Sprints semanales (entregas continuas)", "Paquete mensual de horas (soporte y mejoras)", "Handoff + mantenimiento recurrente (opcional)"]
+    },
+    "ctaPrimary": "Pedir presupuesto para agencia",
+    "ctaSecondary": "Ver disponibilidad",
+    "microcopy": "Envía alcance + plazo + referencias. Respondo con un plan de V1 y próximos pasos."
+  },
+  "quickProject": {
+    "title": "Proyecto rápido: landing en 48–72h",
+    "description": "Ideal para campañas, validación de oferta o generación de leads. Entrega enfocada en claridad, estructura y conversión — con publicación y tracking listos.",
+    "youGetTitle": "Lo que recibes",
+    "youGet": ["Landing completa (secciones + CTA fuerte)", "Form + WhatsApp + eventos de conversión", "Tracking (GA4/GTM/Pixel cuando necesario)", "SEO base (metas + sitemap/robots si aplica)", "Deploy y publicación (staging + producción)", "1 ronda de ajustes rápida tras la primera entrega"],
+    "needTitle": "Lo que necesito para empezar",
+    "need": ["Link de la marca / redes sociales", "Oferta principal (qué se vende)", "Plazo deseado y 2–3 referencias de layout", "Textos/fotos (o autorización para placeholders)", "Acceso a dominio/hosting (si publicas en tu entorno)"],
+    "howItWorksTitle": "Cómo funciona",
+    "howItWorks": ["Brief rápido + checklist", "Primera versión en staging", "Ajustes finales + publicación + handoff"],
+    "cta": "Pedir proyecto rápido",
+    "microcopy": "Si prefieres, envía las referencias por WhatsApp y respondo con la V1."
+  },
+  "testimonials": {
+    "label": "Testimonios",
+    "title": "Credibilidad construida",
+    "titleAccent": "proyecto a proyecto.",
+    "description": "Reemplaza los textos de abajo con testimonios reales de clientes o socios.",
+    "items": [
+      {
+        "name": "Testimonio (placeholder)",
+        "role": "[Cargo / empresa]",
+        "text": "[Testimonio real aquí sobre calidad, plazos y comunicación.]"
+      },
+      {
+        "name": "Testimonio (placeholder)",
+        "role": "[Cargo / empresa]",
+        "text": "[Testimonio real aquí enfocado en trabajo con agencia / white-label.]"
+      },
+      {
+        "name": "Testimonio (placeholder)",
+        "role": "[Cargo / empresa]",
+        "text": "[Testimonio real aquí sobre atención al detalle y handoff.]"
+      }
+    ]
+  },
+  "services": {
+    "items": {
+      "landing": {
+        "pill": "Sitios completos",
+        "title": "Sitios completos (landing + institucional)",
+        "description": "De cero al sitio publicado, con estructura, contenido y deploy.",
+        "deliverables": {
+          "0": "Landing de conversión + sitio multi-secciones",
+          "1": "CTAs (WhatsApp/forms), páginas esenciales y navegación clara",
+          "2": "SEO base (meta tags, sitemap, indexación)",
+          "3": "Deploy + dominio + SSL + handoff organizado"
+        }
+      },
+      "institutional": {
+        "pill": "Automatizaciones",
+        "title": "Automatizaciones (procesos y leads)",
+        "description": "Automatización de tareas repetitivas para ganar tiempo y escala.",
+        "deliverables": {
+          "0": "Lead → CRM → follow-up automático",
+          "1": "Integraciones entre apps + webhooks",
+          "2": "Reglas, validaciones y logs",
+          "3": "Documentación y handoff"
+        }
+      },
+      "uiux": {
+        "pill": "UI/UX",
+        "title": "UI/UX + responsive (pulido)",
+        "description": "Dejo el visual moderno, consistente y perfecto en cualquier pantalla.",
+        "deliverables": {
+          "0": "Tipografía, grid, espaciado y contraste",
+          "1": "Correcciones mobile/tablet/desktop",
+          "2": "Estandarización con Tailwind/shadcn",
+          "3": "Microinteracciones y acabado de \"agencia\""
+        }
+      },
+      "performance": {
+        "pill": "Performance",
+        "title": "Rendimiento / SEO (velocidad y búsqueda)",
+        "description": "Mejoras para cargar rápido y posicionar mejor.",
+        "deliverables": {
+          "0": "Optimización de imágenes, fuentes y lazy loading",
+          "1": "Core Web Vitals + Lighthouse",
+          "2": "Robots/sitemap/canonical/redirects",
+          "3": "Checklist de indexación (Search Console)"
+        }
+      },
+      "integrations": {
+        "pill": "Integraciones",
+        "title": "Integraciones (booking + pagos + tracking)",
+        "description": "Conecto tu sitio a herramientas y dejo todo medible.",
+        "deliverables": {
+          "0": "Booking/agenda y flujos de confirmación",
+          "1": "Pagos (checkout/suscripciones cuando sea necesario)",
+          "2": "GA4/GTM/Pixel y eventos de conversión",
+          "3": "Forms → CRM/hoja de cálculo/email"
+        }
+      },
+      "maintenance": {
+        "pill": "Software",
+        "title": "Software y SaaS",
+        "description": "Construyo sistemas internos y plataformas SaaS desde el MVP hasta la escala.",
+        "deliverables": {
+          "0": "Dashboards, permisos y base de datos",
+          "1": "Auth por email/código, áreas privadas",
+          "2": "Planes/límites, billing y recurrencia",
+          "3": "Deploy, entornos y evolución por roadmap"
+        }
+      }
+    }
+  },
+  "projects": {
+    "p1": {
+      "short": "Plataforma de puntuación y plan de acción.",
+      "description": "Sistema con flujo guiado, recolección de datos, generación de reporte y límites por créditos."
+    },
+    "p2": {
+      "short": "Guía de experiencias locales.",
+      "description": "PWA con páginas de lugares, rutas y embudo hacia WhatsApp."
+    },
+    "p3": {
+      "short": "Página de conversión de leads.",
+      "description": "Landing con secciones, CTA fuerte y tracking."
+    },
+    "p4": {
+      "short": "Panel de gestión moderno.",
+      "description": "Dashboard con cards, tabla y filtros."
+    },
+    "p5": {
+      "short": "Listados por tarjeta + aplicación rápida.",
+      "description": "Listado con moderación y contacto vía WhatsApp."
+    },
+    "p6": {
+      "short": "Sección 3D estilo galaxia.",
+      "description": "Layout inspirado en UI sci-fi con overlay animado."
+    }
+  }
+}

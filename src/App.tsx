@@ -20,9 +20,9 @@ export default function App() {
       />
 
       <div className="intro-content relative z-10 bg-transparent">
-        {/* Navbar + Hero: sem SectionTone */}
+        {/* Navbar + Hero: mesmo timing de reveal */}
         <div className="relative z-10">
-          <SiteNavbar />
+          <SiteNavbar delayAppearanceMs={200} />
           <ThriverHero />
         </div>
 

@@ -3,31 +3,47 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Badge } from "@/components/ui/badge";
-import { HERO_REVEAL_DELAY_S } from "@/constants/timing";
 
 const VIDEO_SRC = "/210884_medium.mp4";
 
-/* ── Framer-motion variants ─────────────────────────────────────────── */
-const fadeUp = (delay = 0) => ({
-  hidden: { opacity: 0, y: 28 },
+/* ─── Timing único: todos os elementos aparecem juntos, feel premium ─── */
+const HERO_REVEAL = {
+  delay: 0.2,
+  duration: 0.95,
+  ease: [0.22, 1, 0.36, 1] as const,
+};
+
+/* ── Variants premium: movimento sutil, mesma duração para todos ──────── */
+const fadeUp = {
+  hidden: { opacity: 0, y: 12 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1], delay },
+    transition: { duration: HERO_REVEAL.duration, ease: HERO_REVEAL.ease, delay: HERO_REVEAL.delay },
   },
-});
+};
 
-const fadeIn = (delay = 0) => ({
+const fadeIn = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.6, delay } },
-});
+  visible: {
+    opacity: 1,
+    transition: { duration: HERO_REVEAL.duration, ease: HERO_REVEAL.ease, delay: HERO_REVEAL.delay },
+  },
+};
+
+const revealOpacity = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { duration: HERO_REVEAL.duration, ease: HERO_REVEAL.ease, delay: HERO_REVEAL.delay },
+  },
+};
 
 /* ── Sphere ─────────────────────────────────────────────────────────── */
 function Sphere({
   size,
   className,
   variant = "purple",
-  delay = 0,
 }: {
   size: number;
   className?: string;
@@ -38,9 +54,9 @@ function Sphere({
   return (
     <motion.div
       aria-hidden="true"
-      initial={{ opacity: 0, scale: 0.6 }}
+      initial={{ opacity: 0, scale: 0.94 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.2, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: HERO_REVEAL.duration, delay: HERO_REVEAL.delay, ease: HERO_REVEAL.ease }}
       className={`absolute rounded-full animate-float ${cls} ${className ?? ""}`}
       style={{ width: size, height: size }}
     />
@@ -53,7 +69,6 @@ function OrbitRing({
   tiltX,
   tiltY,
   className,
-  delay = 0,
 }: {
   size: number;
   tiltX: number;
@@ -66,7 +81,7 @@ function OrbitRing({
       aria-hidden="true"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.5, delay }}
+      transition={{ duration: HERO_REVEAL.duration, delay: HERO_REVEAL.delay, ease: HERO_REVEAL.ease }}
       className={`orbit-ring animate-orbit ${className ?? ""}`}
       style={{
         width: size,
@@ -133,9 +148,7 @@ export function ThriverHero() {
         <motion.div
           aria-hidden="true"
           className="absolute inset-0 z-0 pointer-events-none"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.3, delay: HERO_REVEAL_DELAY_S, ease: [0.22, 1, 0.36, 1] }}
+          {...revealOpacity}
           style={{
             background: [
               "radial-gradient(900px 560px at 5% 8%,  rgba(139,31,204,0.50), transparent 55%)",
@@ -149,9 +162,7 @@ export function ThriverHero() {
         <motion.div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 1.8, ease: [0.22, 1, 0.36, 1] }}
+          {...revealOpacity}
           style={{
             boxShadow: "inset 0 0 280px rgba(0,0,0,0.75)",
             background: "radial-gradient(ellipse 110% 90% at 50% 50%, transparent 35%, rgba(0,0,0,0.55) 80%, rgba(0,0,0,0.90) 100%)",
@@ -161,16 +172,12 @@ export function ThriverHero() {
         {/* ── Animated glow orbs ── */}
         <motion.div
           aria-hidden="true"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 2.1 }}
+          {...revealOpacity}
           className="absolute top-0 left-1/4 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-purple-700/25 blur-[130px] animate-glow-pulse"
         />
         <motion.div
           aria-hidden="true"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 2.4 }}
+          {...revealOpacity}
           className="absolute -top-12 right-1/4 h-[380px] w-[380px] rounded-full bg-brand-red/15 blur-[110px] animate-glow-pulse"
           style={{ animationDelay: "1.5s" }}
         />
@@ -178,24 +185,20 @@ export function ThriverHero() {
         {/* ── 3-D Spheres (desktop) ── */}
         <motion.div
           aria-hidden="true"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.3, delay: 2.5 }}
+          {...revealOpacity}
           className="absolute right-0 top-0 w-[520px] h-[600px] pointer-events-none"
           style={{ transformStyle: "preserve-3d" }}
         >
-          <Sphere size={230} variant="purple" className="right-[80px] top-[80px]" delay={0} />
-          <Sphere size={95}  variant="orange" className="right-[38px] top-[22px]"  delay={0.1} />
-          <Sphere size={55}  variant="purple" className="right-[290px] top-[190px]" delay={0.2} />
-          <OrbitRing size={330} tiltX={68} tiltY={-18} className="right-[-15px] top-[-35px]" delay={0.1} />
-          <OrbitRing size={225} tiltX={52} tiltY={14}  className="right-[45px]  top-[35px]"  delay={0.2} />
+          <Sphere size={230} variant="purple" className="right-[80px] top-[80px]" />
+          <Sphere size={95}  variant="orange" className="right-[38px] top-[22px]" />
+          <Sphere size={55}  variant="purple" className="right-[290px] top-[190px]" />
+          <OrbitRing size={330} tiltX={68} tiltY={-18} className="right-[-15px] top-[-35px]" />
+          <OrbitRing size={225} tiltX={52} tiltY={14}  className="right-[45px]  top-[35px]" />
         </motion.div>
 
-        {/* ── Hero content: entra por último ── */}
+        {/* ── Hero content: mesmo timing que o resto ── */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.3, delay: 2.8, ease: [0.22, 1, 0.36, 1] }}
+          {...revealOpacity}
           className="relative z-20 mx-auto max-w-6xl px-4 md:px-6 pt-24 md:pt-28 flex-1 flex flex-col"
         >
             <div className="grid min-h-[520px] md:min-h-[640px] grid-cols-1 md:grid-cols-[1.15fr_0.85fr] items-center py-16 md:py-24">
@@ -204,7 +207,7 @@ export function ThriverHero() {
             <div>
               {/* Pills */}
               <motion.div
-                variants={fadeIn(0.2)}
+                variants={fadeIn}
                 initial="hidden"
                 animate="visible"
                 className="flex flex-wrap items-center gap-3"
@@ -220,7 +223,7 @@ export function ThriverHero() {
 
               {/* Headline */}
               <motion.h1
-                variants={fadeUp(0.35)}
+                variants={fadeUp}
                 initial="hidden"
                 animate="visible"
                 className="mt-8 font-sans text-[clamp(2.25rem,9vw,4.75rem)] leading-[1.08] tracking-[-0.02em] md:text-[4.5rem] md:leading-[1.05] font-semibold text-white"
@@ -233,7 +236,7 @@ export function ThriverHero() {
 
               {/* Sub-text */}
               <motion.p
-                variants={fadeUp(0.5)}
+                variants={fadeUp}
                 initial="hidden"
                 animate="visible"
                 className="mt-6 max-w-md text-base leading-relaxed text-white/55"
@@ -251,9 +254,7 @@ export function ThriverHero() {
 
         {/* ── Scroll hint ── */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 3.3, duration: 1 }}
+          {...revealOpacity}
           className="relative z-20 flex justify-center pb-12 md:pb-16"
         >
           <a
