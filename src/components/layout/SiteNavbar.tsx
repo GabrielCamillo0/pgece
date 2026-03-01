@@ -30,12 +30,13 @@ export function SiteNavbar({ delayAppearanceMs = 0 }: SiteNavbarProps) {
           typeof window !== "undefined"
             ? window.scrollY ?? document.documentElement.scrollTop
             : 0;
+        const prev = lastScrollY.current;
+        lastScrollY.current = current;
         setVisible(() => {
           if (current <= SCROLL_THRESHOLD) return true;
-          if (current > lastScrollY.current) return false;
-          return true;
+          if (current > prev) return false; // descendo → ocultar
+          return true; // subindo ou no topo → mostrar
         });
-        lastScrollY.current = current;
         ticking = false;
       });
     };

@@ -1,4 +1,6 @@
-import { useRef, useEffect } from "react";
+"use client";
+
+import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -93,9 +95,19 @@ function OrbitRing({
 }
 
 /* ── Main Hero ──────────────────────────────────────────────────────── */
+/** Gradiente de fallback quando o vídeo não carrega (ex.: em produção sem o arquivo) */
+const HERO_VIDEO_FALLBACK_STYLE = {
+  background: [
+    "radial-gradient(900px 560px at 5% 8%,  rgba(139,31,204,0.35), transparent 55%)",
+    "radial-gradient(700px 500px at 72% 0%,  rgba(255,72,32,0.18),  transparent 55%)",
+    "linear-gradient(180deg, #0d0020 0%, #08000e 55%, #05000a 100%)",
+  ].join(","),
+};
+
 export function ThriverHero() {
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -118,30 +130,35 @@ export function ThriverHero() {
         className="relative isolate overflow-hidden bg-[#08000E] text-white min-h-[85vh] md:min-h-[90vh] flex flex-col"
         style={{ perspective: "1200px" }}
       >
-        {/* ── Vídeo: z-[1] para ficar acima dos gradientes (z-0), rola com a seção ── */}
+        {/* ── Vídeo (ou fallback se 404 em produção) ── */}
         <div
           className="absolute inset-0 z-[1] pointer-events-none overflow-hidden"
           aria-hidden
           style={{ minHeight: "100%", minWidth: "100%" }}
         >
-          <video
-            ref={videoRef}
-            className="absolute top-0 left-0 h-full w-full object-cover select-none"
-            style={{
-              transform: "translateZ(0)",
-              opacity: 0.42,
-              mixBlendMode: "screen",
-            }}
-            muted
-            playsInline
-            autoPlay
-            loop
-            preload="auto"
-            disablePictureInPicture
-            disableRemotePlayback
-          >
-            <source src={VIDEO_SRC} type="video/mp4" />
-          </video>
+          {videoError ? (
+            <div className="absolute inset-0" style={HERO_VIDEO_FALLBACK_STYLE} />
+          ) : (
+            <video
+              ref={videoRef}
+              className="absolute top-0 left-0 h-full w-full object-cover select-none"
+              style={{
+                transform: "translateZ(0)",
+                opacity: 0.42,
+                mixBlendMode: "screen",
+              }}
+              muted
+              playsInline
+              autoPlay
+              loop
+              preload="auto"
+              disablePictureInPicture
+              disableRemotePlayback
+              onError={() => setVideoError(true)}
+            >
+              <source src={VIDEO_SRC} type="video/mp4" />
+            </video>
+          )}
         </div>
 
         {/* ── Gradientes por baixo do vídeo ── */}
