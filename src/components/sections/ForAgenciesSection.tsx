@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 export function ForAgenciesSection() {
   return (
     <div className="relative bg-[#05000a]/55 py-20 md:py-24">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
         <div className="mb-10 max-w-2xl">
           <p className="mb-3 font-mono text-sm font-medium uppercase tracking-[0.28em] text-brand-red">
             Para agências

@@ -15,7 +15,7 @@ export function ServicosPageContent() {
   return (
     <>
       <SectionTone variant="light" className="py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
             <div className="mb-4 flex items-center gap-3">
               <div className="h-px w-8 bg-gradient-to-r from-brand-red to-brand-orange" />
@@ -23,7 +23,7 @@ export function ServicosPageContent() {
                 {t("servicesSection.label")}
               </span>
             </div>
-            <h1 className="text-3xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
+            <h1 className="text-2xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
               {t("servicesSection.title")}
               <span className="bg-gradient-to-r from-brand-red via-brand-orange to-amber-300 bg-clip-text text-transparent">
                 {" "}
@@ -66,12 +66,12 @@ export function ServicosPageContent() {
       </SectionTone>
 
       <SectionTone variant="dark" className="py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
           <div className="mb-10 max-w-2xl">
             <p className="mb-4 font-mono text-sm font-medium uppercase tracking-[0.28em] text-brand-red">
               {t("agenciesSection.label")}
             </p>
-            <h2 className="text-3xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
+            <h2 className="text-2xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
               {t("agenciesSection.title")}
               <span className="bg-gradient-to-r from-brand-red via-brand-orange to-amber-300 bg-clip-text text-transparent">
                 {t("agenciesSection.titleAccent")}
@@ -145,7 +145,7 @@ export function ServicosPageContent() {
 
       <SectionTone variant="light" className="py-16 md:py-24">
         <StackSection>
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
           <Card className="border-brand-red/30 bg-card/80 p-5 sm:p-6 md:p-10">
             <CardHeader className="p-0 pb-4 md:pb-6">
               <CardTitle className="text-xl md:text-3xl text-balance">

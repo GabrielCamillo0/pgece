@@ -9,12 +9,12 @@ export function AboutSection() {
   const oQueVoceGanha = t("aboutSection.oQueVoceGanha", { returnObjects: true }) as string[] | undefined;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 md:px-6">
+    <div className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
         <SectionReveal>
         <p className="mb-4 font-mono text-sm font-medium uppercase tracking-[0.28em] text-brand-red">
           {t("aboutSection.label")}
         </p>
-        <h2 className="mb-4 text-3xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
+        <h2 className="mb-4 text-2xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
           {t("aboutSection.title")}
         </h2>
         <div className="space-y-4 text-sm leading-relaxed text-white/70 md:text-base max-w-2xl">
@@ -58,7 +58,7 @@ export function AboutSection() {
         )}
 
         <SectionReveal delay={0.14}>
-        <div className="mt-12 flex flex-wrap gap-3">
+        <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Button asChild variant="default">
             <Link href="/#cases">{t("aboutSection.ctaPrimary")}</Link>
           </Button>

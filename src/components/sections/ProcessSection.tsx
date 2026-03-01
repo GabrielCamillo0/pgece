@@ -13,13 +13,13 @@ export function ProcessSection() {
   const guarantees = t("processSection.guarantees", { returnObjects: true }) as string[];
 
   return (
-    <div className="mx-auto max-w-6xl px-4 md:px-6">
+    <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
         <SectionReveal>
         <header className="mb-12 max-w-2xl">
           <p className="mb-4 font-mono text-sm font-medium uppercase tracking-[0.28em] text-brand-red">
             {t("processSection.label")}
           </p>
-          <h2 className="text-3xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
+          <h2 className="text-2xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
             {t("processSection.title")}
             <span className="bg-gradient-to-r from-brand-red via-brand-orange to-amber-300 bg-clip-text text-transparent">
               {t("processSection.titleAccent")}
@@ -46,7 +46,7 @@ export function ProcessSection() {
 
         <div className="mb-10 h-px w-full max-w-2xl bg-gradient-to-r from-transparent via-brand-red/25 to-transparent" aria-hidden />
 
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8">
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:gap-8">
           {steps.map((step, i) => (
             <SectionReveal key={step.title} delay={i * 0.06}>
             <Card className="border-white/10 bg-card/80 section-card-hover">

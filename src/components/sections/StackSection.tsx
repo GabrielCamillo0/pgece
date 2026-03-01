@@ -14,7 +14,7 @@ export function StackSection({ children }: StackSectionProps) {
   const quality = t("stackSection.items.quality", { returnObjects: true }) as string[];
 
   return (
-    <div className="mx-auto max-w-6xl px-4 md:px-6">
+    <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
         <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <p className="mb-4 font-mono text-sm font-medium uppercase tracking-[0.28em] text-brand-red">

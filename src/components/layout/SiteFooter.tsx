@@ -16,8 +16,8 @@ export function SiteFooter() {
   return (
     <footer className="mt-16 border-t border-white/10 bg-gradient-to-b from-[#05000a]/70 to-black/75">
       {/* Main footer grid */}
-      <div className="mx-auto max-w-6xl px-4 md:px-6 py-14 md:py-20">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 py-14 md:py-20">
+        <div className="grid gap-10 md:gap-12 md:grid-cols-2 lg:grid-cols-3">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-3">

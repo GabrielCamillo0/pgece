@@ -12,11 +12,11 @@ export function SobrePageContent() {
 
   return (
     <SectionTone variant="light" className="py-16 md:py-24">
-      <div className="mx-auto max-w-4xl px-4 md:px-6">
+      <div className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
         <p className="mb-4 font-mono text-sm font-medium uppercase tracking-[0.28em] text-brand-red">
           {t("aboutSection.label")}
         </p>
-        <h1 className="mb-6 text-3xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
+        <h1 className="mb-6 text-2xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
           {t("aboutSection.title")}
         </h1>
         <div className="space-y-4 text-sm leading-relaxed text-white/65 md:text-base">

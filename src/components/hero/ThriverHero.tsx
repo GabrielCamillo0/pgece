@@ -104,10 +104,23 @@ const HERO_VIDEO_FALLBACK_STYLE = {
   ].join(","),
 };
 
+/** Fallback em inglês para evitar hydration mismatch (server vs client i18n) */
+const HERO_FALLBACK = {
+  badge: "Discover the power of well-crafted design",
+  headlineLine1: "Digital experience that",
+  headlineAccent: "Transforms",
+  subtext: "Your digital success starts with a well-designed interface.\nLet's build something great together!",
+  scrollAria: "Scroll down",
+  scrollLabel: "Scroll",
+} as const;
+
 export function ThriverHero() {
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoError, setVideoError] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -234,7 +247,7 @@ export function ThriverHero() {
                   gece Studio
                 </Badge>
                 <Badge variant="default">
-                  {t("hero.badge")}
+                  {mounted ? t("hero.badge") : HERO_FALLBACK.badge}
                 </Badge>
               </motion.div>
 
@@ -245,9 +258,9 @@ export function ThriverHero() {
                 animate="visible"
                 className="mt-8 font-sans text-[clamp(2.25rem,9vw,4.75rem)] leading-[1.08] tracking-[-0.02em] md:text-[4.5rem] md:leading-[1.05] font-semibold text-white"
               >
-                {t("hero.headline.line1")}{" "}
+                {mounted ? t("hero.headline.line1") : HERO_FALLBACK.headlineLine1}{" "}
                 <span className="bg-gradient-to-r from-brand-red via-brand-orange to-amber-400 bg-clip-text text-transparent">
-                  {t("hero.headline.accent")}
+                  {mounted ? t("hero.headline.accent") : HERO_FALLBACK.headlineAccent}
                 </span>
               </motion.h1>
 
@@ -258,7 +271,7 @@ export function ThriverHero() {
                 animate="visible"
                 className="mt-6 max-w-md text-base leading-relaxed text-white/55"
               >
-                {t("hero.subtext")}
+                {mounted ? t("hero.subtext") : HERO_FALLBACK.subtext}
               </motion.p>
 
 
@@ -277,10 +290,10 @@ export function ThriverHero() {
           <a
             href="#cases"
             className="flex flex-col items-center gap-2 text-white/95 hover:text-white transition-colors duration-300"
-            aria-label={t("hero.scrollAria")}
+            aria-label={mounted ? t("hero.scrollAria") : HERO_FALLBACK.scrollAria}
           >
             <span className="text-xs tracking-[0.3em] uppercase font-mono">
-              {t("hero.scrollLabel")}
+              {mounted ? t("hero.scrollLabel") : HERO_FALLBACK.scrollLabel}
             </span>
             <ChevronDown className="h-4 w-4 animate-bounce" />
           </a>

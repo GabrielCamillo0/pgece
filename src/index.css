@@ -30,11 +30,15 @@
     --radius: 0.75rem;
     /* Layout tokens */
     --container-max: 72rem;
-    --section-padding-y: 5rem;     /* py-20 */
-    --section-padding-y-md: 6rem;  /* md:py-24 */
-    --section-padding-y-lg: 8rem; /* py-32 for hero sections */
-    --content-gap: 1.5rem;         /* gap-6 */
-    --content-gap-md: 2rem;        /* md:gap-8 */
+    --container-px: 1rem;         /* px-4 mobile */
+    --container-px-md: 1.5rem;    /* md:px-6 */
+    --container-px-lg: 2rem;      /* lg:px-8 */
+    --section-padding-y: 4rem;    /* py-16 mobile */
+    --section-padding-y-md: 6rem; /* md:py-24 */
+    --section-padding-y-lg: 8rem; /* py-32 hero */
+    --content-gap: 1rem;          /* gap-4 mobile */
+    --content-gap-md: 1.5rem;     /* md:gap-6 */
+    --content-gap-lg: 2rem;       /* lg:gap-8 */
   }
 
   * {
@@ -100,5 +104,35 @@
 
   *::-webkit-scrollbar-corner {
     background: hsl(257 50% 8%);
+  }
+
+  /* Focus visível para acessibilidade (teclado) */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+/* Container padrão do site: max-width + padding lateral responsivo */
+@layer utilities {
+  .site-container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-px);
+    padding-right: var(--container-px);
+  }
+  @media (min-width: 768px) {
+    .site-container {
+      padding-left: var(--container-px-md);
+      padding-right: var(--container-px-md);
+    }
+  }
+  @media (min-width: 1024px) {
+    .site-container {
+      padding-left: var(--container-px-lg);
+      padding-right: var(--container-px-lg);
+    }
   }
 }

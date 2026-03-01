@@ -45,13 +45,13 @@ const socialLinks = [
 export function ContatoPageContent() {
   return (
     <SectionTone variant="light" className="py-16 md:py-20 lg:py-24">
-      <div className="mx-auto max-w-6xl px-4 md:px-6">
+      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
         {/* Header alinhado à esquerda, mesma largura do conteúdo em colunas */}
         <header className="max-w-xl">
           <p className="mb-3 font-mono text-sm font-medium uppercase tracking-[0.28em] text-brand-red">
             Contato
           </p>
-          <h1 className="text-3xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
+          <h1 className="text-2xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
             Envie sua mensagem
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-white/65 md:text-base">
