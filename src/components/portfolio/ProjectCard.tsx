@@ -32,18 +32,18 @@ export function ProjectCard({ project }: { project: Project }) {
             tiltMaxAngleX={8}
             tiltMaxAngleY={8}
             scale={1.02}
-            className="rounded-[22px] block w-full"
+            className="rounded-[18px] md:rounded-[22px] block w-full"
             style={{ willChange: "transform" }}
           >
             <article
-              className="portfolio-card overflow-hidden min-h-[480px] flex flex-col cursor-pointer group h-full"
+              className="portfolio-card overflow-hidden min-h-[320px] md:min-h-[480px] flex flex-col cursor-pointer group h-full touch-manipulation active:scale-[0.99] transition-transform"
               role="button"
               tabIndex={0}
               onClick={() => setOpen(true)}
               onKeyDown={(e) => e.key === "Enter" && setOpen(true)}
             >
             {/* Imagem ocupa a maior parte do card */}
-            <div className="relative flex-1 min-h-[400px] -mx-6 -mt-6 overflow-hidden rounded-t-[22px] bg-white/5">
+            <div className="relative flex-1 min-h-[220px] md:min-h-[400px] -mx-4 -mt-4 md:-mx-6 md:-mt-6 overflow-hidden rounded-t-[18px] md:rounded-t-[22px] bg-white/5">
               {project.previewGif ? (
                 <img
                   src={project.previewGif}
@@ -58,7 +58,7 @@ export function ProjectCard({ project }: { project: Project }) {
             </div>
 
             {/* Faixa compacta com dados do projeto */}
-            <div className="shrink-0 px-6 pb-5 pt-3 flex flex-col gap-2">
+            <div className="shrink-0 px-4 md:px-6 pb-4 md:pb-5 pt-3 flex flex-col gap-2">
               <div className="flex items-center justify-between gap-2">
                 <span className="text-[11px] text-white/25 font-mono tabular-nums shrink-0">
                   {String(parseInt(project.id.replace("p", ""))).padStart(2, "0")}

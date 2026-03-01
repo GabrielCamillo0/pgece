@@ -1,63 +1,66 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export function ForAgenciesSection() {
+  const { t } = useTranslation();
   return (
     <div className="relative bg-[#05000a]/55 py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
         <div className="mb-10 max-w-2xl">
           <p className="mb-3 font-mono text-sm font-medium uppercase tracking-[0.28em] text-brand-red">
-            Para agências
+            {t("forAgenciesSection.label")}
           </p>
           <h2 className="text-3xl font-semibold tracking-[-0.02em] text-white md:text-4xl">
-            White-label para você vender,
+            {t("forAgenciesSection.title")}
             <span className="bg-gradient-to-r from-brand-red via-brand-orange to-amber-300 bg-clip-text text-transparent">
               {" "}
-              eu entrego.
+              {t("forAgenciesSection.titleAccent")}
             </span>
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-white/60 md:text-base">
-            Você mantém o relacionamento e a estratégia com o cliente. Eu cuido da implementação
-            e da experiência digital, com handoff organizado e previsível.
+            {t("forAgenciesSection.description")}
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="border-white/10 bg-card/80">
             <CardHeader>
-              <CardTitle>Formato white-label</CardTitle>
+              <CardTitle>{t("forAgenciesSection.card1Title")}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-sm text-white/70">
-              <p>Você assina o projeto, eu fico em segundo plano.</p>
+              <p>{t("forAgenciesSection.card1Intro")}</p>
               <ul className="space-y-1 list-inside list-disc">
-                <li>Comunicação via Slack / WhatsApp / email.</li>
-                <li>Arquitetura e implementação alinhadas com o stack da agência.</li>
+                <li>{t("forAgenciesSection.card1Bullet1")}</li>
+                <li>{t("forAgenciesSection.card1Bullet2")}</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="border-white/10 bg-card/80">
             <CardHeader>
-              <CardTitle>Handoff organizado</CardTitle>
+              <CardTitle>{t("forAgenciesSection.card2Title")}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-sm text-white/70">
               <ul className="space-y-1 list-inside list-disc">
-                <li>Repositório no GitHub ou similar.</li>
-                <li>Deploy configurado (Vercel/Netlify/etc.).</li>
-                <li>Anotações de setup e variáveis de ambiente.</li>
+                <li>{t("forAgenciesSection.card2Bullet1")}</li>
+                <li>{t("forAgenciesSection.card2Bullet2")}</li>
+                <li>{t("forAgenciesSection.card2Bullet3")}</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="border-white/10 bg-card/80">
             <CardHeader>
-              <CardTitle>Modelos de trabalho</CardTitle>
+              <CardTitle>{t("forAgenciesSection.card3Title")}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-sm text-white/70">
               <ul className="space-y-1 list-inside list-disc">
-                <li>Por projeto fechado.</li>
-                <li>Pacote mensal de horas.</li>
-                <li>Sprints semanais focadas em entregas específicas.</li>
+                <li>{t("forAgenciesSection.card3Bullet1")}</li>
+                <li>{t("forAgenciesSection.card3Bullet2")}</li>
+                <li>{t("forAgenciesSection.card3Bullet3")}</li>
               </ul>
             </CardContent>
           </Card>
@@ -65,10 +68,10 @@ export function ForAgenciesSection() {
 
         <div className="mt-10 flex flex-wrap gap-3">
           <Button asChild>
-            <a href="#contato">Pedir orçamento para agência</a>
+            <a href="#contato">{t("forAgenciesSection.ctaPrimary")}</a>
           </Button>
           <Button variant="ghost" asChild>
-            <a href="#contato">Ver disponibilidade de agenda</a>
+            <a href="#contato">{t("forAgenciesSection.ctaSecondary")}</a>
           </Button>
         </div>
       </div>

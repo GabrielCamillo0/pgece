@@ -145,7 +145,7 @@ export function SiteNavbar({ delayAppearanceMs = 0 }: SiteNavbarProps) {
               className="md:hidden text-white/80 hover:text-white"
               onClick={() => setMobileOpen((o) => !o)}
               aria-expanded={mobileOpen}
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-label={mobileOpen ? (hydrated ? t("nav.closeMenu") : "Close menu") : (hydrated ? t("nav.openMenu") : "Open menu")}
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>

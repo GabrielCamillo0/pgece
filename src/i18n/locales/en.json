@@ -11,7 +11,9 @@
     "about": "About",
     "contact": "Contact",
     "goHomeAria": "Go to home",
-    "languageAria": "Language"
+    "languageAria": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "badge": "Discover the power of well-crafted design",
@@ -34,13 +36,16 @@
     "titlePrefix": "Portfolio",
     "titleAccent": "selected",
     "subtitle": "Projects that blend aesthetics and performance to drive real results.",
+    "intro": "My portfolio brings together all my digital creations — from <strong>professional sites</strong> built for real projects to <strong>sample sites</strong>, <strong>blogs</strong> and experiments made for fun or to test new ideas. Here you get an overview of my style, evolution and how I build products: with a focus on <strong>quality</strong>, <strong>organization</strong> and <strong>great experience on any screen</strong>.",
     "cta": "See more"
   },
   "project": {
     "seeDetails": "See details",
     "modalLabel": "Project",
     "visitSite": "Visit site",
-    "opensNewTab": "Opens in a new tab"
+    "opensNewTab": "Opens in a new tab",
+    "closeModalAria": "Close modal",
+    "closeAria": "Close"
   },
   "servicesSection": {
     "label": "SERVICES",
@@ -159,13 +164,46 @@
     "label": "Contact",
     "title": "Send your message",
     "subtitle": "Fill out the form below.",
-    "socialTitle": "Social links"
+    "socialTitle": "Social links",
+    "directContactTitle": "Direct contact",
+    "quickReply": "Quick reply during business hours",
+    "availabilityAria": "Availability",
+    "whatsAppFaster": "WhatsApp (fastest)",
+    "whatsAppAria": "Open WhatsApp (fastest reply)",
+    "bookCall": "Book a call",
+    "bookCallAria": "Book a call",
+    "otherLinks": "Other links",
+    "trustChips": ["ET • US", "PT/EN/ES", "Remote"],
+    "socialGitHub": "GitHub",
+    "socialInstagram": "Instagram",
+    "socialLinkedIn": "LinkedIn"
   },
   "footer": {
     "description": "Digital experiences that transform. Development focused on agencies and digital businesses that need clear delivery and an organized handoff.",
     "navigation": "Navigation",
     "contact": "Contact",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "emailPlaceholder": "you@yourdomain.com"
+  },
+  "forAgenciesSection": {
+    "label": "For agencies",
+    "title": "White-label for you to sell,",
+    "titleAccent": "I deliver.",
+    "description": "You keep the client relationship and strategy. I handle implementation and digital experience, with an organized and predictable handoff.",
+    "card1Title": "White-label format",
+    "card1Intro": "You sign the project, I stay in the background.",
+    "card1Bullet1": "Communication via Slack / WhatsApp / email.",
+    "card1Bullet2": "Architecture and implementation aligned with the agency stack.",
+    "card2Title": "Organized handoff",
+    "card2Bullet1": "Repository on GitHub or similar.",
+    "card2Bullet2": "Deploy configured (Vercel/Netlify/etc.).",
+    "card2Bullet3": "Setup notes and environment variables.",
+    "card3Title": "Work models",
+    "card3Bullet1": "Fixed-scope project.",
+    "card3Bullet2": "Monthly hours package.",
+    "card3Bullet3": "Weekly sprints focused on specific deliverables.",
+    "ctaPrimary": "Request agency quote",
+    "ctaSecondary": "Check availability"
   },
   "stackSection": {
     "label": "STACK",

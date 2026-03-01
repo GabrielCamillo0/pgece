@@ -11,7 +11,9 @@
     "about": "Acerca de",
     "contact": "Contacto",
     "goHomeAria": "Ir al inicio",
-    "languageAria": "Idioma"
+    "languageAria": "Idioma",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
   "hero": {
     "badge": "Descubre el poder de un diseño bien construido",
@@ -34,13 +36,16 @@
     "titlePrefix": "Portafolio",
     "titleAccent": "seleccionado",
     "subtitle": "Proyectos que combinan estética y rendimiento para generar resultados reales.",
+    "intro": "Mi portafolio reúne todas mis creaciones digitales — desde <strong>sitios profesionales</strong> desarrollados para proyectos reales hasta <strong>sitios de ejemplo</strong>, <strong>blogs</strong> y experimentos hechos por gusto o para probar nuevas ideas. Aquí encuentras una visión general de mi estilo, mi evolución y la forma en que construyo productos: con foco en <strong>calidad</strong>, <strong>organización</strong> y <strong>buena experiencia en cualquier pantalla</strong>.",
     "cta": "Ver más"
   },
   "project": {
     "seeDetails": "Ver detalles",
     "modalLabel": "Proyecto",
     "visitSite": "Visitar sitio",
-    "opensNewTab": "Se abre en una nueva pestaña"
+    "opensNewTab": "Se abre en una nueva pestaña",
+    "closeModalAria": "Cerrar modal",
+    "closeAria": "Cerrar"
   },
   "servicesSection": {
     "label": "SERVICIOS",
@@ -154,13 +159,46 @@
     "label": "Contacto",
     "title": "Envía tu mensaje",
     "subtitle": "Completa el formulario a continuación.",
-    "socialTitle": "Redes"
+    "socialTitle": "Redes",
+    "directContactTitle": "Contacto directo",
+    "quickReply": "Respuesta rápida en horario comercial",
+    "availabilityAria": "Disponibilidad",
+    "whatsAppFaster": "WhatsApp (más rápido)",
+    "whatsAppAria": "Abrir WhatsApp (respuesta más rápida)",
+    "bookCall": "Agendar llamada",
+    "bookCallAria": "Agendar llamada",
+    "otherLinks": "Otros enlaces",
+    "trustChips": ["ET • US", "PT/EN/ES", "Remote"],
+    "socialGitHub": "GitHub",
+    "socialInstagram": "Instagram",
+    "socialLinkedIn": "LinkedIn"
   },
   "footer": {
     "description": "Experiencias digitales que transforman. Desarrollo enfocado en agencias y negocios digitales que necesitan una entrega clara y un handoff organizado.",
     "navigation": "Navegación",
     "contact": "Contacto",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "emailPlaceholder": "tu@ejemplo.com"
+  },
+  "forAgenciesSection": {
+    "label": "Para agencias",
+    "title": "White-label para que tú vendas,",
+    "titleAccent": "yo entrego.",
+    "description": "Tú mantienes la relación y la estrategia con el cliente. Yo me encargo de la implementación y la experiencia digital, con handoff organizado y predecible.",
+    "card1Title": "Formato white-label",
+    "card1Intro": "Tú firmas el proyecto, yo quedo en segundo plano.",
+    "card1Bullet1": "Comunicación vía Slack / WhatsApp / email.",
+    "card1Bullet2": "Arquitectura e implementación alineadas con el stack de la agencia.",
+    "card2Title": "Handoff organizado",
+    "card2Bullet1": "Repositorio en GitHub o similar.",
+    "card2Bullet2": "Deploy configurado (Vercel/Netlify/etc.).",
+    "card2Bullet3": "Notas de setup y variables de entorno.",
+    "card3Title": "Modelos de trabajo",
+    "card3Bullet1": "Por proyecto cerrado.",
+    "card3Bullet2": "Paquete mensual de horas.",
+    "card3Bullet3": "Sprints semanales enfocados en entregas específicas.",
+    "ctaPrimary": "Pedir presupuesto para agencia",
+    "ctaSecondary": "Ver disponibilidad"
   },
   "stackSection": {
     "label": "STACK",

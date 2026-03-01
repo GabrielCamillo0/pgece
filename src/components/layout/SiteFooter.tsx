@@ -55,8 +55,8 @@ export function SiteFooter() {
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li>
-                <a href="mailto:contato@exemplo.com" className="transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded-sm">
-                  contato@exemplo.com
+                <a href={`mailto:${t("footer.emailPlaceholder")}`} className="transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded-sm">
+                  {t("footer.emailPlaceholder")}
                 </a>
               </li>
               <li>
