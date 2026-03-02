@@ -17,7 +17,7 @@ export function SiteFooter() {
     <footer className="mt-16 border-t border-white/10 bg-gradient-to-b from-[#05000a]/70 to-black/75">
       {/* Main footer grid */}
       <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 py-14 md:py-20">
-        <div className="grid gap-10 md:gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 md:gap-12 md:grid-cols-2">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-3">
@@ -45,30 +45,6 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Contato */}
-          <div>
-            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-white/50">
-              {t("footer.contact")}
-            </h4>
-            <ul className="mt-5 space-y-3 text-sm text-white/70">
-              <li>
-                <a href={`mailto:${t("footer.emailPlaceholder")}`} className="transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded-sm">
-                  {t("footer.emailPlaceholder")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/5511999999999"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded-sm"
-                >
-                  {t("footer.whatsapp")}
-                </a>
-              </li>
             </ul>
           </div>
         </div>
