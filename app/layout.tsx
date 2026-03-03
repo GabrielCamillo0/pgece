@@ -5,7 +5,7 @@ import "../src/index.css";
 import "../src/styles/galactic.css";
 
 export const metadata: Metadata = {
-  title: "pgece – Portfolio",
+  title: "Gece – Portfolio",
   description:
     "Portfolio for agencies and digital businesses, focused on performance and user experience.",
   icons: {
