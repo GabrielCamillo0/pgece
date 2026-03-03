@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "pgece – Portfolio",
   description:
     "Portfolio for agencies and digital businesses, focused on performance and user experience.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
