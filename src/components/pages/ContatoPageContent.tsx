@@ -7,9 +7,7 @@ import { SectionTone } from "@/components/layout/SectionTone";
 import { useTranslation } from "react-i18next";
 
 // Placeholder: substitua pelo seu número (ex.: 5511999999999)
-const WHATSAPP_LINK = "https://wa.me/5511999999999";
-// Placeholder: substitua pelo link da sua agenda (Calendly, Cal.com, etc.)
-const AGENDAR_CALL_LINK = "#";
+const WHATSAPP_LINK = "https://wa.me/14074665147";
 
 function SocialLinksIcons({ name }: { name: string }) {
   if (name === "GitHub")
@@ -37,9 +35,9 @@ export function ContatoPageContent() {
   const { t } = useTranslation();
   const trustChips = t("contactPage.trustChips", { returnObjects: true }) as string[];
   const socialLinks = [
-    { nameKey: "socialGitHub" as const, href: "https://github.com" },
-    { nameKey: "socialInstagram" as const, href: "https://instagram.com" },
-    { nameKey: "socialLinkedIn" as const, href: "https://linkedin.com" },
+    { nameKey: "socialGitHub" as const, href: "https://github.com/GabrielCamillo0" },
+    { nameKey: "socialInstagram" as const, href: "https://www.instagram.com/justhegece" },
+    { nameKey: "socialLinkedIn" as const, href: "https://www.linkedin.com/in/gabriel-camillo/" },
   ];
 
   return (
@@ -88,16 +86,6 @@ export function ContatoPageContent() {
                     aria-label={t("contactPage.whatsAppAria")}
                   >
                     {t("contactPage.whatsAppFaster")}
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="default" className="w-full sm:w-auto">
-                  <a
-                    href={AGENDAR_CALL_LINK}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={t("contactPage.bookCallAria")}
-                  >
-                    {t("contactPage.bookCall")}
                   </a>
                 </Button>
               </div>

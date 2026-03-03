@@ -13,7 +13,10 @@ export function ContactForm({ className = "", showMoreContactsLink = true }: Con
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
   const [enviado, setEnviado] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
   const { t } = useTranslation();
 
@@ -26,21 +29,38 @@ export function ContactForm({ className = "", showMoreContactsLink = true }: Con
     return Object.keys(next).length === 0;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setApiError(null);
     if (!validate()) return;
-    const subject = encodeURIComponent(
-      t("contactForm.subject", { name: nome })
-    );
-    const body = encodeURIComponent(
-      t("contactForm.body", {
-        name: nome,
-        email,
-        message: mensagem,
-      })
-    );
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
-    setEnviado(true);
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: nome.trim(),
+          email: email.trim(),
+          message: mensagem.trim(),
+          website: website.trim() || undefined,
+        }),
+      });
+      await res.json().catch(() => ({}));
+      if (!res.ok) {
+        if (res.status === 429) {
+          setApiError(t("contactForm.errorRateLimit"));
+        } else {
+          setApiError(t("contactForm.errorGeneric"));
+        }
+        setSending(false);
+        return;
+      }
+      setEnviado(true);
+    } catch {
+      setApiError(t("contactForm.errorGeneric"));
+    } finally {
+      setSending(false);
+    }
   }
 
   const inputBase =
@@ -52,6 +72,19 @@ export function ContactForm({ className = "", showMoreContactsLink = true }: Con
       className={`mt-10 w-full max-w-lg mx-auto text-left space-y-5 md:mx-0 md:max-w-none ${className}`.trim()}
       noValidate
     >
+      {/* Honeypot: escondido do usuário; bots costumam preencher */}
+      <div className="absolute -left-[9999px] top-0 opacity-0 pointer-events-none" aria-hidden="true">
+        <label htmlFor="contact-website">Website</label>
+        <input
+          id="contact-website"
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+        />
+      </div>
       <div>
         <label htmlFor="contact-nome" className="block text-sm font-medium text-white/80 mb-1.5">
           {t("contactForm.nameLabel")}
@@ -122,14 +155,19 @@ export function ContactForm({ className = "", showMoreContactsLink = true }: Con
           </p>
         )}
       </div>
+      {apiError && (
+        <p className="text-sm text-amber-400" role="alert">
+          {apiError}
+        </p>
+      )}
       {enviado ? (
         <p className="text-sm text-brand-orange" role="status">
           {t("contactForm.success")}
         </p>
       ) : (
         <div className="flex flex-wrap items-center gap-3">
-          <Button type="submit" size="lg">
-            {t("contactForm.submit")}
+          <Button type="submit" size="lg" disabled={sending}>
+            {sending ? t("contactForm.sending") : t("contactForm.submit")}
           </Button>
           {showMoreContactsLink && (
             <Button asChild variant="outline" size="lg">
